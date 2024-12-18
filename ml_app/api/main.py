@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
 import joblib
+import os
 
 app = Flask(__name__)
 
 # Charger le modèle
-model = joblib.load('model.pkl')
-
+model_path = os.path.join(os.path.dirname(__file__), '../model/model.pkl')
+model = joblib.load(model_path)
 # Route pour l'URL racine
 @app.route('/')
 def home():
@@ -19,4 +20,4 @@ def predict():
     return jsonify({'prediction': prediction[0]})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5003)
