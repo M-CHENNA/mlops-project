@@ -29,7 +29,7 @@ jobs:
     - name: Start API
       run: |
         source venv/bin/activate
-        python main.py &
+        python ml_app/api/main.py &
         sleep 10  # Attendre 10 secondes pour que le serveur démarre correctement
 
     # 4. Exécuter les tests automatisés
