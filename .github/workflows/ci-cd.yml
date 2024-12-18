@@ -25,26 +25,28 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-      # 3. Lancer l'API en arrière-plan
+    # 3. Démarrer l'API en arrière-plan
     - name: Start API
       run: |
         source venv/bin/activate
         python main.py &
-    # 3. Exécuter les tests automatisés
+        sleep 10  # Attendre 10 secondes pour que le serveur démarre correctement
+
+    # 4. Exécuter les tests automatisés
     - name: Run Tests
       run: |
         source venv/bin/activate
-        venv/bin/pytest
+        pytest
 
-    # 4. Construire l'image Docker
+    # 5. Construire l'image Docker
     - name: Build Docker Image
       run: docker build -t ml-app:latest .
 
-    # 5. Déployer l'image Docker en local (ou sur un serveur distant)
+    # 6. Déployer l'image Docker en local (ou sur un serveur distant)
     - name: Deploy Docker Container
       run: docker run -d -p 5000:5000 --name ml-app-container ml-app:latest
 
-    # 6. Nettoyer les anciens conteneurs (optionnel)
+    # 7. Nettoyer les anciens conteneurs (optionnel)
     - name: Clean Up
       if: always()
       run: docker rm -f ml-app-container || true
