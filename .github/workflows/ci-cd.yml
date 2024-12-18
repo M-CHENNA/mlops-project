@@ -40,7 +40,7 @@ jobs:
 
     # 5. Construire l'image Docker
     - name: Build Docker Image
-      run: docker build -t ml-app:latest .
+      run: docker build -t ml-app:latest -f docker/Dockerfile .
 
     # 6. Déployer l'image Docker en local (ou sur un serveur distant)
     - name: Deploy Docker Container

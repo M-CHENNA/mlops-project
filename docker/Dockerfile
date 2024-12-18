@@ -12,7 +12,7 @@ COPY ml_app/model/model.pkl /app/
 RUN pip install Flask joblib scikit-learn
 
 # Exposer le port 5000 pour l'API Flask
-EXPOSE 5000
+EXPOSE 5003
 
 # Commande pour lancer l'API
 CMD ["python", "main.py"]
