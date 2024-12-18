@@ -25,7 +25,11 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
 
-
+      # 3. Lancer l'API en arrière-plan
+    - name: Start API
+      run: |
+        source venv/bin/activate
+        python main.py &
     # 3. Exécuter les tests automatisés
     - name: Run Tests
       run: |
