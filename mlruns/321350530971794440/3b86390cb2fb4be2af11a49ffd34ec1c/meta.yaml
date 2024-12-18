@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/321350530971794440/3b86390cb2fb4be2af11a49ffd34ec1c/artifacts
+end_time: 1734469026798
+entry_point_name: ''
+experiment_id: '321350530971794440'
+lifecycle_stage: active
+run_id: 3b86390cb2fb4be2af11a49ffd34ec1c
+run_name: melodic-cow-669
+run_uuid: 3b86390cb2fb4be2af11a49ffd34ec1c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734469021093
+status: 3
+tags: []
+user_id: Manel CHENNA

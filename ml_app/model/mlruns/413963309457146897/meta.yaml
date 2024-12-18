@@ -1,0 +1,6 @@
+artifact_location: file:///C:/Users/Manel%20CHENNA/Desktop/MLops/ml_app/model/mlruns/413963309457146897
+creation_time: 1734468104872
+experiment_id: '413963309457146897'
+last_update_time: 1734468104872
+lifecycle_stage: active
+name: iris_classification
