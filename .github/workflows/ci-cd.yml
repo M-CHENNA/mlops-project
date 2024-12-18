@@ -44,7 +44,7 @@ jobs:
 
     # 6. Déployer l'image Docker en local (ou sur un serveur distant)
     - name: Deploy Docker Container
-      run: docker run -d -p 5003:5003 --name ml-app-container ml-app:latest
+      run: docker run -d -p 5004:5003 --name ml-app-container ml-app:latest
 
     # 7. Nettoyer les anciens conteneurs (optionnel)
     - name: Clean Up
