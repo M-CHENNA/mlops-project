@@ -23,7 +23,7 @@ jobs:
         python -m venv venv
         source venv/bin/activate
         pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r C:\Users\Manel CHENNA\Desktop\MLops\mlartifacts\321350530971794440\3b86390cb2fb4be2af11a49ffd34ec1c\artifacts\model\requirements.txt
 
     # 3. Exécuter les tests automatisés
     - name: Run Tests
