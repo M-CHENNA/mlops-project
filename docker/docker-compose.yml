@@ -1,10 +1,32 @@
 version: '3.8'
 
 services:
+  ml-app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5003:5003"
+    container_name: ml-app-container
+
   prometheus:
     image: prom/prometheus
-    container_name: prometheus
+    volumes:
+       - "../monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
     ports:
       - "9090:9090"
+    container_name: prometheus
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
-      - ../monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  grafana_data:
