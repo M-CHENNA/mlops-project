@@ -2,16 +2,16 @@ FROM python:3.9
 
 WORKDIR /app
 
-# Copier le code de l'API dans le répertoire de travail
+# L code de l'API dans le répertoire de travail
 COPY ml_app/api/ /app/
 
-# Copier le modèle entraîné
+# Le modèle entraîné
 COPY ml_app/model/model.pkl /app/
 
-# Installer les dépendances nécessaires
-RUN pip install Flask joblib scikit-learn
+# Installation des dépendances nécessaires
+RUN pip install Flask joblib scikit-learn prometheus-flask-exporter
 
-# Exposer le port 5000 pour l'API Flask
+# Exposition du port 5003 pour l'API Flask
 EXPOSE 5003
 
 # Commande pour lancer l'API

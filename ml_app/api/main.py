@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from prometheus_flask_exporter import PrometheusMetrics
 import joblib
 import os
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)  
 
-# Charger le modèle
+# Chargement du modèle
 model_path = os.path.join(os.path.dirname(__file__), '../model/model.pkl')
 model = joblib.load(model_path)
 # Route pour l'URL racine
